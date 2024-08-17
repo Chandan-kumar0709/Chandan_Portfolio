@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./output.css" rel="stylesheet">
+  <link rel="stylesheet" href="./main.css">
+</head>
+<body>
+    
+    <header class="bg-purple-300 h-32 w-[100%] flex relative">
+      <img src="./media/portfolio.jpg" alt="please Wait... " class="ml-[25%] h-[80%] w-[50%] bg-transparent rounded-full -rotate-1 absolute bottom-[1px] top-1">
+      <div class="clock-container absolute">
+        <div id="date" class="date"></div>
+        <div id="time" class="time"></div>
+       </div>
+       
+    </header>
+
+    <div class="bg-purple-300 h-32 w-[100%] mx-auto "><br>
+      <nav class="navbar">
+        <div class="brand-title">My Website</div>
+        <a href="#" class="toggle-button">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </a>
+        <div class="navbar-links">
+            <ul>
+                <li><a href="./main_page.html">Home</a></li>
+                <li><a href="./About.html">About</a></li>
+                <li class="dropdown">
+                    <a href="#">Services</a>
+                    <ul class="dropdown-content" id="drop">
+                        <li><a href="#">Web Development</a></li>
+                        <li><a href="#">App Development</a></li>
+                    </ul>
+                </li>
+                <li><a href="./Skills.html">Skills</a></li>
+                <li><a href="./Contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    </div>
+    <div class="bg-purple-300 h-32 w-[100%]"><img src="./media/Image1.jpeg" alt="wait" class="h-[350px] w-[350px] ml-[70%]  rounded-full" id="ckimg"></div>
+    <div class="bg-purple-300 h-32 w-[100%]">
+      <div class="greeting-container">
+      <div id="greeting" class="greeting"></div>
+      <button id="changeGreetingBtn" class="change-greeting-btn">Change your Greeting</button>
+  </div>
+</div>
+<footer>
+    <div class="bg-purple-300 h-32 w-[100%]"></div>
+    <div class="bg-purple-300 h-[55px] w-[100%]"></div>
+  </footer>
+
+</body>
+<script src="./main.js"></script>
+</html>

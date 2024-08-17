@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Chandan Kumar</title>
+    <style type="text/css">
+:root {
+    --primary-color: #333;
+    --secondary-color: #555;
+    --accent-color: #ff6f61;
+    --font-main: 'Poppins', sans-serif;
+    --font-secondary: 'Roboto', sans-serif;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: #f5f5f5;
+    color: var(--primary-color);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+section {
+    padding: 80px 20px;
+    margin-top: 60px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h1, h2 {
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: var(--accent-color);
+    color: #fff;
+    border-radius: 5px;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
+    background-color: #ff4b4b;
+}
+
+.hero-content {
+    margin: 20px 0;
+}
+
+.hero-image {
+    max-width: 300px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.hidden {
+    display: none;
+}
+
+.skill {
+    margin: 20px 0;
+}
+
+.skill h3 {
+    margin-bottom: 5px;
+}
+
+.skill-bar {
+    width: 0;
+    height: 10px;
+    background-color: #333;
+    transition: width 1s ease;
+}
+
+.skill-bar[data-skill="90%"] {
+    width: 90%;
+}
+
+.skill-bar[data-skill="85%"] {
+    width: 85%;
+}
+
+.skill-bar[data-skill="80%"] {
+    width: 80%;
+}
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .hero-content {
+        text-align: center;
+    }
+
+    .hero-image {
+        max-width: 200px;
+        margin: 0 auto;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="./main_page.html">Home</a></li>
+                <li><a href="./About.html">About Me</a></li>
+                <li><a href="./Skills.html">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="./Contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="about">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Hi, I'm Chandan Kumar</h1>
+                <p>Hi, I'm Chandan Kumar, a passionate and dedicated front-end developer currently pursuing my Master of Computer Applications (MCA). With a strong foundation in web technologies and a keen eye for design, I specialize in creating responsive, user-friendly web applications that deliver seamless digital experiences.
+
+                    I enjoy turning complex problems into simple, beautiful, and intuitive interfaces. Whether it's crafting clean code or bringing a design to life, I strive to build products that not only meet user needs but also exceed expectations. As I continue to expand my skills and knowledge, I’m excited to work on innovative projects and collaborate with like-minded professionals.</p>
+                <button id="learn-more">Learn More</button>
+            </div>
+            <img src="./media/Image1.jpeg" alt="A photo of myself" class="hero-image">
+        </div>
+    </section>
+    
+
+    <section id="skills" class="hidden">
+        <div class="container">
+            <h2>My Skills</h2>
+            <div class="skills-list">
+                <div class="skill">
+                    <h3>HTML & CSS</h3>
+                    <div class="skill-bar" data-skill="90%"></div>
+                </div>
+                <div class="skill">
+                    <h3>JavaScript</h3>
+                    <div class="skill-bar" data-skill="85%"></div>
+                </div>
+                <div class="skill">
+                    <h3>React.js</h3>
+                    <div class="skill-bar" data-skill="80%"></div>
+                </div>
+                <!-- Add more skills as needed -->
+            </div>
+        </div>
+    </section>
+
+    
+</body>
+<script type="text/JavaScript">
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('animate');
+        }
+    });
+});
+
+document.querySelectorAll('.skill-bar').forEach(bar => {
+    observer.observe(bar);
+});
+
+document.getElementById('learn-more').addEventListener('click', function() {
+    const skillsSection = document.getElementById('skills');
+    skillsSection.classList.toggle('hidden');
+    
+    if (!skillsSection.classList.contains('hidden')) {
+        this.textContent = 'Show Less';
+    } else {
+        this.textContent = 'Learn More';
+    }
+});
+
+</script>
+</html>
